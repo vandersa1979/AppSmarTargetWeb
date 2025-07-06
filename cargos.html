@@ -1,99 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cargos – SmarTarget</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .sidebar { width: 240px; background: #1e293b; color: #fff; overflow-y: auto; }
-    .sidebar a { display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem; border-radius: .5rem; }
-    .sidebar a:hover { background: #334155; }
-    .active { background: #334155; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cargos - SmarTarget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style> body { font-family: 'Inter', sans-serif; } .sidebar { scrollbar-width: none; } </style>
 </head>
 <body class="bg-slate-100">
-  <div class="flex h-screen">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <nav class="mt-6 space-y-1">
-        <a href="./home.html" class="pl-6"><span>🏠 Início</span></a>
-        <a href="./usuarios.html" class="pl-6"><span>👤 Usuários</span></a>
-        <a href="./equipes.html" class="pl-6"><span>👥 Equipes</span></a>
-        <a href="./empresas.html" class="pl-6"><span>🏢 Empresas</span></a>
-        <a href="./filiais.html" class="pl-6"><span>🌐 Filiais</span></a>
-        <a href="./departamentos.html" class="pl-6"><span>📂 Departamentos</span></a>
-        <a href="./cargos.html" class="pl-6 active"><span>💼 Cargos</span></a>
-        <a href="./periodos.html" class="pl-6"><span>⏱️ Períodos</span></a>
-        <a href="./associacoes.html" class="pl-6"><span>🔗 Associações</span></a>
-        <a href="./mapa-estrategico.html" class="pl-6"><span>🗺️ Mapa Estratégico</span></a>
-        <a href="./dashboard.html" class="pl-6"><span>📈 Dashboard</span></a>
-        <a href="./vinculos.html" class="pl-6"><span>🔗 Vínculos OKR-KPI</span></a>
-      </nav>
-    </aside>
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-800 text-white flex flex-col p-4 fixed h-full overflow-y-auto sidebar">
+            <div class="text-center py-4 mb-5"><h1 class="text-2xl font-bold">SmarTarget</h1></div>
+            <nav class="flex-grow">
+                <a href="./home.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🏠 Início</span></a>
+                <h2 class="text-xs font-semibold text-slate-400 uppercase mt-6 mb-2 px-4">Cadastros</h2>
+                <a href="./usuarios.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>👤 Usuários</span></a>
+                <a href="./equipes.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>👥 Equipes</span></a>
+                <a href="./empresas.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🏢 Empresas e Filiais</span></a>
+                <a href="./departamentos.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>📂 Departamentos</span></a>
+                <a href="./cargos.html" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-slate-700"><span>💼 Cargos</span></a>
+                <a href="./periodos.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🗓️ Períodos de Avaliação</span></a>
+                <h2 class="text-xs font-semibold text-slate-400 uppercase mt-6 mb-2 px-4">Gestão de Metas</h2>
+                <a href="./okrs.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🎯 OKRs</span></a>
+                <a href="./kpis.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>📊 KPIs</span></a>
+                <a href="./associacoes.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🔗 Associações</span></a>
+                <h2 class="text-xs font-semibold text-slate-400 uppercase mt-6 mb-2 px-4">Análise</h2>
+                <a href="./mapa-estrategico.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🗺️ Mapa Estratégico</span></a>
+                <a href="./dashboard.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>📈 Dashboard</span></a>
+            </nav>
+        </aside>
 
-    <!-- Conteúdo principal -->
-    <main class="flex-1 p-6 overflow-auto">
-      <h2 class="text-2xl font-bold text-slate-700 mb-4">Gestão de Cargos</h2>
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <table id="cargosTable" class="min-w-full divide-y divide-slate-200">
-          <thead class="bg-slate-50">
-            <tr>
-              <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Nome do Cargo</th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Ações</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white divide-y divide-slate-200">
-            <!-- Linhas serão inseridas via JavaScript -->
-          </tbody>
-        </table>
-        <button
-          class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-          onclick="location.href='./novo-cargo.html'"
-        >+ Novo Cargo</button>
-      </div>
-    </main>
-  </div>
+        <!-- Main Content -->
+        <main class="flex-1 ml-64 p-8 overflow-y-auto">
+            <h1 class="text-3xl font-bold text-slate-800 mb-6">Cadastro de Cargos</h1>
 
-  <script>
-    // Carrega lista de cargos do localStorage
-    const cargos = JSON.parse(localStorage.getItem('cargos')) || [];
-    const tbody = document.querySelector('#cargosTable tbody');
+            <!-- Form -->
+            <div class="bg-white p-6 rounded-xl shadow-md mb-8 max-w-2xl">
+                <form id="cargoForm" class="space-y-4">
+                    <input type="hidden" id="editIndex" />
+                    <div>
+                        <label for="nome" class="block text-sm font-medium text-slate-600">Nome do Cargo</label>
+                        <input type="text" id="nome" placeholder="Ex: Analista Financeiro" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required />
+                    </div>
+                    <div>
+                        <label for="departamento" class="block text-sm font-medium text-slate-600">Departamento</label>
+                        <select id="departamento" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required></select>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Salvar Cargo</button>
+                    </div>
+                </form>
+            </div>
 
-    cargos.forEach((cargo, i) => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td class="px-6 py-4 whitespace-nowrap">${cargo.nome}</td>
-        <td class="px-6 py-4 whitespace-nowrap">
-          <button onclick="consultar(${i})" class="mr-2 underline">Consultar</button>
-          <button onclick="editar(${i})" class="mr-2 underline">Editar</button>
-          <button onclick="excluir(${i})" class="underline text-red-600">Excluir</button>
-        </td>`;
-      tbody.appendChild(tr);
-    });
+            <!-- Table -->
+            <div class="bg-white p-6 rounded-xl shadow-md overflow-x-auto">
+                <table class="w-full text-sm text-left text-slate-500">
+                    <thead class="text-xs text-slate-700 uppercase bg-slate-100">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Nome do Cargo</th>
+                            <th scope="col" class="px-6 py-3">Departamento</th>
+                            <th scope="col" class="px-6 py-3 text-center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cargoTable"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
 
-    function consultar(i) {
-      alert('Cargo: ' + cargos[i].nome);
-    }
+    <script>
+        const form = document.getElementById('cargoForm');
+        const cargoTable = document.getElementById('cargoTable');
+        const departamentoSelect = document.getElementById('departamento');
+        let cargos = JSON.parse(localStorage.getItem('cargos')) || [];
+        let departamentos = JSON.parse(localStorage.getItem('departamentos')) || [];
 
-    function editar(i) {
-      const novoNome = prompt('Editar nome do cargo:', cargos[i].nome);
-      if (novoNome) {
-        cargos[i].nome = novoNome;
-        localStorage.setItem('cargos', JSON.stringify(cargos));
-        location.reload();
-      }
-    }
+        function loadDepartamentos() {
+            departamentoSelect.innerHTML = '<option value="" disabled selected>Selecione o departamento</option>';
+            departamentos.forEach(dep => {
+                departamentoSelect.innerHTML += `<option value="${dep.nome}">${dep.nome}</option>`;
+            });
+        }
 
-    function excluir(i) {
-      if (confirm('Tem certeza que deseja excluir este cargo?')) {
-        cargos.splice(i, 1);
-        localStorage.setItem('cargos', JSON.stringify(cargos));
-        location.reload();
-      }
-    }
-  </script>
+        function renderTable() {
+            cargoTable.innerHTML = '';
+            cargos.forEach((cargo, index) => {
+                const row = cargoTable.insertRow();
+                row.className = 'bg-white border-b hover:bg-slate-50';
+                row.innerHTML = `
+                    <td class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">${cargo.nome}</td>
+                    <td class="px-6 py-4">${cargo.departamento}</td>
+                    <td class="px-6 py-4 text-center">
+                        <button onclick="editCargo(${index})" class="font-medium text-blue-600 hover:underline mr-3">Editar</button>
+                        <button onclick="deleteCargo(${index})" class="font-medium text-red-600 hover:underline">Excluir</button>
+                    </td>
+                `;
+            });
+        }
+
+        function editCargo(index) {
+            const cargo = cargos[index];
+            document.getElementById('nome').value = cargo.nome;
+            departamentoSelect.value = cargo.departamento;
+            document.getElementById('editIndex').value = index;
+            window.scrollTo(0, 0);
+        }
+
+        function deleteCargo(index) {
+            if (confirm('Tem certeza que deseja excluir este cargo?')) {
+                cargos.splice(index, 1);
+                localStorage.setItem('cargos', JSON.stringify(cargos));
+                renderTable();
+            }
+        }
+
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const departamento = departamentoSelect.value;
+            const editIndex = document.getElementById('editIndex').value;
+            const cargo = { nome, departamento };
+
+            if (editIndex === '') {
+                cargos.push(cargo);
+            } else {
+                cargos[editIndex] = cargo;
+                document.getElementById('editIndex').value = '';
+            }
+
+            localStorage.setItem('cargos', JSON.stringify(cargos));
+            form.reset();
+            renderTable();
+        };
+
+        loadDepartamentos();
+        renderTable();
+    </script>
 </body>
 </html>

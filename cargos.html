@@ -72,7 +72,8 @@
 
     <script>
         const form = document.getElementById('cargoForm');
-        const cargoTable = document.getElementById('cargoTable').getElementsByTagName('tbody')[0];
+        // Ajuste: selecionar diretamente o <tbody> pelo ID
+        const cargoTable = document.getElementById('cargoTable');
         const departamentoSelect = document.getElementById('departamento');
         let cargos = JSON.parse(localStorage.getItem('cargos')) || [];
         let departamentos = JSON.parse(localStorage.getItem('departamentos')) || [];

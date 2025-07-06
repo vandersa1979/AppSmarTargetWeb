@@ -3,65 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vínculos - SmarTarget</title>
+  <title>Vínculos OKR x KPI - SmarTarget</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style> body { font-family: 'Inter', sans-serif; } .sidebar { scrollbar-width: none; } </style>
+  <style> body { font-family: 'Inter', sans-serif; } </style>
 </head>
 <body class="bg-slate-100">
   <div class="flex h-screen">
     <!-- Sidebar -->
-    <aside class="w-64 bg-slate-800 text-white flex flex-col p-4 fixed h-full overflow-y-auto sidebar">
-      <div class="text-center py-4 mb-5"><h1 class="text-2xl font-bold">SmarTarget</h1></div>
-      <nav class="flex-grow">
-        <a href="./home.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🏠 Início</span></a>
-        <h2 class="text-xs font-semibold text-slate-400 uppercase mt-6 mb-2 px-4">Cadastros</h2>
-        <a href="./usuarios.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>👤 Usuários</span></a>
-        <a href="./equipes.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>👥 Equipes</span></a>
-        <a href="./empresas.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🏢 Empresas e Filiais</span></a>
-        <a href="./departamentos.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>📂 Departamentos</span></a>
-        <a href="./cargos.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>💼 Cargos</span></a>
-        <a href="./periodos.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🗓️ Períodos de Avaliação</span></a>
-        <h2 class="text-xs font-semibold text-slate-400 uppercase mt-6 mb-2 px-4">Gestão de Metas</h2>
-        <a href="./okrs.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🎯 OKRs</span></a>
-        <a href="./kpis.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>📊 KPIs</span></a>
-        <a href="./vinculos.html" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-slate-700"><span>🔗 Vínculos</span></a>
-        <h2 class="text-xs font-semibold text-slate-400 uppercase mt-6 mb-2 px-4">Análise</h2>
-        <a href="./mapa-estrategico.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>🗺️ Mapa Estratégico</span></a>
-        <a href="./dashboard.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700"><span>📈 Dashboard</span></a>
+    <aside class="w-64 bg-slate-800 text-white p-6 fixed h-full overflow-y-auto">
+      <h1 class="text-2xl font-bold mb-8 text-center">SmarTarget</h1>
+      <nav class="space-y-2">
+        <a href="home.html" class="block px-4 py-2 rounded hover:bg-slate-700">🏠 Início</a>
+        <h2 class="mt-4 px-4 text-xs text-slate-400 uppercase">Cadastros</h2>
+        <a href="usuarios.html" class="block px-4 py-2 rounded hover:bg-slate-700">👤 Usuários</a>
+        <a href="equipes.html" class="block px-4 py-2 rounded hover:bg-slate-700">👥 Equipes</a>
+        <a href="empresas.html" class="block px-4 py-2 rounded hover:bg-slate-700">🏢 Empresas</a>
+        <a href="departamentos.html" class="block px-4 py-2 rounded hover:bg-slate-700">📂 Departamentos</a>
+        <a href="cargos.html" class="block px-4 py-2 rounded hover:bg-slate-700">💼 Cargos</a>
+        <a href="periodos.html" class="block px-4 py-2 rounded hover:bg-slate-700">🗓️ Períodos</a>
+        <h2 class="mt-4 px-4 text-xs text-slate-400 uppercase">Gestão de Metas</h2>
+        <a href="okrs.html" class="block px-4 py-2 rounded hover:bg-slate-700">🎯 OKRs</a>
+        <a href="kpis.html" class="block px-4 py-2 rounded hover:bg-slate-700">📊 KPIs</a>
+        <a href="vinculos.html" class="block px-4 py-2 rounded bg-slate-700">🔗 Vínculos</a>
       </nav>
     </aside>
 
     <!-- Main Content -->
     <main class="flex-1 ml-64 p-8 overflow-y-auto">
-      <h1 class="text-3xl font-bold text-slate-800 mb-6">Vínculo OKR x KPI</h1>
+      <h1 class="text-3xl font-bold text-slate-800 mb-6">Vínculos OKR x KPI</h1>
 
       <!-- Form -->
-      <div class="bg-white p-6 rounded-xl shadow-md mb-8 max-w-2xl">
-        <form id="vinculoForm" class="space-y-4">
-          <input type="hidden" id="editIndex" />
+      <div class="bg-white p-6 rounded-xl shadow mb-8 max-w-lg">
+        <form id="vinculosForm" class="space-y-4">
+          <input type="hidden" id="editIndex" value="" />
           <div>
-            <label for="okr" class="block text-sm font-medium text-slate-600">OKR</label>
-            <select id="okr" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required>
+            <label for="okr" class="block text-sm font-medium text-slate-600">Objetivo (OKR)</label>
+            <select id="okr" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500">
               <option value="" disabled selected>Selecione o OKR</option>
             </select>
           </div>
           <div>
-            <label for="kpi" class="block text-sm font-medium text-slate-600">KPI</label>
-            <select id="kpi" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required>
+            <label for="kpi" class="block text-sm font-medium text-slate-600">Indicador (KPI)</label>
+            <select id="kpi" required class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500">
               <option value="" disabled selected>Selecione o KPI</option>
             </select>
           </div>
           <div class="text-right">
-            <button type="submit" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Salvar Vínculo</button>
+            <button type="submit" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition">Salvar Vínculo</button>
           </div>
         </form>
       </div>
 
       <!-- Table -->
-      <div class="bg-white p-6 rounded-xl shadow-md overflow-x-auto">
+      <div class="bg-white p-6 rounded-xl shadow overflow-x-auto">
         <table class="w-full text-sm text-left text-slate-500">
-          <thead class="text-xs text-slate-700 uppercase bg-slate-100">
+          <thead class="text-xs uppercase bg-slate-100 text-slate-700">
             <tr>
               <th class="px-6 py-3">OKR</th>
               <th class="px-6 py-3">KPI</th>
@@ -75,37 +72,34 @@
   </div>
 
   <script>
-    const form = document.getElementById('vinculoForm');
-    const vinculosTable = document.getElementById('vinculosTable');
     const okrSelect = document.getElementById('okr');
     const kpiSelect = document.getElementById('kpi');
-
+    const tableBody = document.getElementById('vinculosTable');
+    const form = document.getElementById('vinculosForm');
     let vinculos = JSON.parse(localStorage.getItem('vinculos')) || [];
-    let okrs = JSON.parse(localStorage.getItem('okrs')) || [];
-    let kpis = JSON.parse(localStorage.getItem('kpis')) || [];
+    const okrs = JSON.parse(localStorage.getItem('okrs')) || [];
+    const kpis = JSON.parse(localStorage.getItem('kpis')) || [];
 
-    function loadOptions() {
-      okrSelect.innerHTML = '<option value="" disabled selected>Selecione o OKR</option>';
+    function loadSelects() {
       okrs.forEach(o => {
         okrSelect.innerHTML += `<option value="${o.nome}">${o.nome}</option>`;
       });
-      kpiSelect.innerHTML = '<option value="" disabled selected>Selecione o KPI</option>';
       kpis.forEach(k => {
         kpiSelect.innerHTML += `<option value="${k.nome}">${k.nome}</option>`;
       });
     }
 
     function renderTable() {
-      vinculosTable.innerHTML = '';
-      vinculos.forEach((v, index) => {
-        const row = vinculosTable.insertRow();
+      tableBody.innerHTML = '';
+      vinculos.forEach((v, i) => {
+        const row = tableBody.insertRow();
         row.className = 'bg-white border-b hover:bg-slate-50';
         row.innerHTML = `
-          <td class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">${v.okr}</td>
+          <td class="px-6 py-4 font-medium text-slate-900">${v.okr}</td>
           <td class="px-6 py-4">${v.kpi}</td>
           <td class="px-6 py-4 text-center">
-            <button onclick="editVinculo(${index})" class="font-medium text-blue-600 hover:underline mr-3">Editar</button>
-            <button onclick="deleteVinculo(${index})" class="font-medium text-red-600 hover:underline">Excluir</button>
+            <button onclick="editVinculo(${i})" class="text-blue-600 hover:underline mr-3">Editar</button>
+            <button onclick="deleteVinculo(${i})" class="text-red-600 hover:underline">Excluir</button>
           </td>
         `;
       });
@@ -120,7 +114,7 @@
     }
 
     function deleteVinculo(index) {
-      if (confirm('Tem certeza que deseja excluir este vínculo?')) {
+      if (confirm('Excluir este vínculo?')) {
         vinculos.splice(index, 1);
         localStorage.setItem('vinculos', JSON.stringify(vinculos));
         renderTable();
@@ -133,20 +127,18 @@
       const kpi = kpiSelect.value;
       const editIndex = document.getElementById('editIndex').value;
       const v = { okr, kpi };
-
       if (editIndex === '') {
         vinculos.push(v);
       } else {
         vinculos[editIndex] = v;
         document.getElementById('editIndex').value = '';
       }
-
       localStorage.setItem('vinculos', JSON.stringify(vinculos));
       form.reset();
       renderTable();
     };
 
-    loadOptions();
+    loadSelects();
     renderTable();
   </script>
 </body>

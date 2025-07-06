@@ -7,23 +7,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-  @apply bg-cover bg-center flex items-center justify-center min-h-screen;
-  /* overlay branco semi-transparente + imagem de fundo */
-  background-image:
-    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
-    url('bg-metas.jpg');
-}
-
-.login-card {
-  /* levei a opacidade do cartão para 95% para destacar ainda mais o conteúdo */
-  @apply bg-white bg-opacity-95 p-8 rounded-2xl shadow-xl w-full max-w-sm;
-}
+      @apply bg-cover bg-center flex items-center justify-center min-h-screen;
+      background-image: url('./assets/bg-metas.jpg');
+    }
+    .login-card {
+      @apply bg-white bg-opacity-90 p-8 rounded-2xl shadow-xl w-full max-w-sm;
+    }
   </style>
 </head>
 <body>
   <div class="login-card">
     <div class="flex justify-center mb-6">
-      <img src="logo-smarTarget.jpg" alt="SmarTarget" class="w-32 h-auto" />
+      <img src="./assets/logo-smarTarget.png" alt="SmarTarget" class="w-32 h-auto" />
     </div>
 
     <h1 class="text-2xl font-semibold text-center mb-6">Bem-vindo ao SmarTarget</h1>
